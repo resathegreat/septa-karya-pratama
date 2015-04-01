@@ -12,25 +12,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @author Yowanda
  */
-class tentang extends CI_Controller {
+class Struktur extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $head['title'] = "Tentang Kami";
+        $head['title'] = "Struktur Organisasi";
         $this->load->vars($head);
         $this->load->view('v_head', $head);
         
-        $array_navbar['active'] = 'tentang';
+        $array_navbar['active'] = 'struktur';
         $this->load->view('v_navbar', $array_navbar);
     }
-
-    public function index() {
-        $this->load->view('tentang/v_profil');
-        $this->load_footer();
-    }
-
-    public function load_footer() {
+    
+    public function index() {        
+        $this->load->view('struktur/v_struktur');
         $this->load->view('v_footer');
     }
-
 }

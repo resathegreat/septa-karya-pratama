@@ -12,13 +12,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @author Yowanda
  */
-class hubunganinvestor extends CI_Controller {
+class Kelebihan extends CI_Controller {
 
     public function index() {
-        $head['title'] = "Hubungan Investor";
+        $head['title'] = "Latar Belakang";
         $this->load->view('v_head', $head);
-        $this->load->view('v_navbar');
-        $this->load->view('hubunganinvestor/v_header');
+        $array_navbar['active'] = 'kelebihan';
+        $this->load->view('v_navbar', $array_navbar);
         $this->load->view('v_footer');
     }
 }

@@ -12,16 +12,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @author Yowanda
  */
-class bisnis extends CI_Controller {
+class VisiMisi extends CI_Controller {
 
-    public function index() {
-        $head['title'] = "Bisnis";
+    function __construct() {
+        parent::__construct();
+        $head['title'] = "Visi dan Misi";
+        $this->load->vars($head);
         $this->load->view('v_head', $head);
-        $this->load->view('v_navbar');
-        $this->load->view('bisnis/v_header');
-        $this->load->view('bisnis/v_opening');
-        $this->load->view('bisnis/v_carousel');
-        $this->load->view('bisnis/v_table');
+        
+        $array_navbar['active'] = 'visimisi';
+        $this->load->view('v_navbar', $array_navbar);
+    }
+    
+    public function index() {        
+        $this->load->view('visimisi/v_visimisi');
         $this->load->view('v_footer');
     }
 }

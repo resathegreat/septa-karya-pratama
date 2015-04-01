@@ -12,15 +12,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @author Yowanda
  */
-class keberlanjutan extends CI_Controller {
+class LatarBelakang extends CI_Controller {
 
-    public function index() 
-	{
-        $head['title'] = "Keberlanjutan";
+    function __construct() {
+        parent::__construct();
+        $head['title'] = "Latar Belakang";
+        $this->load->vars($head);
         $this->load->view('v_head', $head);
-        $this->load->view('v_navbar');
-        $this->load->view('keberlanjutan/v_header');
-		$this->load->view('keberlanjutan/v_keberlanjutan');
+        
+        $array_navbar['active'] = 'latarbelakang';
+        $this->load->view('v_navbar', $array_navbar);
+    }
+    
+    public function index() {        
         $this->load->view('v_footer');
     }
 }
